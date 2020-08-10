@@ -31,7 +31,7 @@ contract LendingPoolDataProvider is VersionedInitializable {
     **/
     uint256 public constant HEALTH_FACTOR_LIQUIDATION_THRESHOLD = 1e18;
 
-    uint256 public constant DATA_PROVIDER_REVISION = 0x1;
+    uint256 public constant DATA_PROVIDER_REVISION = 0x2;
 
     function getRevision() internal pure returns (uint256) {
         return DATA_PROVIDER_REVISION;

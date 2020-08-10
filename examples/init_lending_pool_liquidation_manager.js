@@ -10,15 +10,8 @@ const hmy = new Harmony(
   }
 );
 
-
-//mint account address
-//test account with 100 ONEs
-//one1c93pn8x6a2j6stcqv5wag5m0t5k5ya79ge86sg
-//1f054c21a0f57ebc402c00e14bd1707ddf45542d4ed9989933dbefc4ea96ca68
-//0xc162199cDaeAa5a82f00651dd4536F5d2d4277C5
-
 const addrProviderJson = require("../build/contracts/LendingPoolAddressesProvider.json");
-const addrProviderAddr = "0xa92E6188E59dEC1714d6cCd40eeEca2F39075486";
+const addrProviderAddr = "0xeae2c52c7670bedda7b86466558619887d9acc62";
 const addrProvider = hmy.contracts.createContract(
   addrProviderJson.abi,
   addrProviderAddr
@@ -31,9 +24,9 @@ const options = {
   gasLimit: process.env.GAS_LIMIT,
 };
 
-// Ready - proxy address: 0xB1419E30427e2B483df940c6aA24510891937aBc
-async function setAddresses() {
-  let res = await addrProvider.methods.setLendingPoolLiquidationManager("0xb1419e30427e2b483df940c6aa24510891937abc").send(options);
+// Ready - proxy address: 0x2C49Cb1eC8020C9799186Cc7240DAD42640f58C6
+async function init() {
+  let res = await addrProvider.methods.setLendingPoolLiquidationManager("0x2c49cb1ec8020c9799186cc7240dad42640f58c6").send(options);
   
   console.log(res.transaction);
 
@@ -41,6 +34,6 @@ async function setAddresses() {
 
   console.log("LendingPoolAddressesProvider-LendingPoolLiquidationManager " + poolAddr);
 }
-setAddresses().then(() => {
+init().then(() => {
     process.exit(0);
 });

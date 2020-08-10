@@ -10,15 +10,8 @@ const hmy = new Harmony(
   }
 );
 
-
-//mint account address
-//test account with 100 ONEs
-//one1c93pn8x6a2j6stcqv5wag5m0t5k5ya79ge86sg
-//1f054c21a0f57ebc402c00e14bd1707ddf45542d4ed9989933dbefc4ea96ca68
-//0xc162199cDaeAa5a82f00651dd4536F5d2d4277C5
-
 const addrProviderJson = require("../build/contracts/LendingPoolAddressesProvider.json");
-const addrProviderAddr = "0xa92E6188E59dEC1714d6cCd40eeEca2F39075486";
+const addrProviderAddr = "0xeae2c52c7670bedda7b86466558619887d9acc62";
 const addrProvider = hmy.contracts.createContract(
   addrProviderJson.abi,
   addrProviderAddr
@@ -27,7 +20,7 @@ const addrProvider = hmy.contracts.createContract(
 addrProvider.wallet.addByPrivateKey(process.env.PRIVATE_KEY);
 
 const priceOracleJson = require("../build/contracts/PriceOracle.json");
-const priceOracleAddr = "0x7996558072d94972fab6c489faa5f2b3bcb8aca0";
+const priceOracleAddr = "0x356Bb5b09bF00BdC9630C0B7Bef9321C0339E589";
 const priceOracle = hmy.contracts.createContract(
   priceOracleJson.abi,
   priceOracleAddr
@@ -40,8 +33,10 @@ const options = {
   gasLimit: process.env.GAS_LIMIT,
 };
 
-// Ready - proxy address: 0x7996558072D94972fab6c489Faa5f2B3BCb8aCA0
-async function setAddresses() {
+const BUSDaddr = "0x2d47d492c0978143171CB577224be39aA1dff5ce"
+
+// Ready - proxy address: 0x356Bb5b09bF00BdC9630C0B7Bef9321C0339E589
+async function init(reserve) {
   let res = await priceOracle.methods.getEthUsdPrice().call(options);
   
   console.log(res);
@@ -54,15 +49,27 @@ async function setAddresses() {
   
   console.log(res);
 
+  res = await priceOracle.methods.getAssetPrice(reserve).call(options);
+  
+  console.log(res);
 
-  res = await addrProvider.methods.setPriceOracle("0x7996558072d94972fab6c489faa5f2b3bcb8aca0").send(options);
+  res = await priceOracle.methods.setAssetPrice(reserve, 1).send(options);
   
   console.log(res.transaction);
 
-  let PriceOracleAddr = await addrProvider.methods.getPriceOracle().call(options);
+  res = await priceOracle.methods.getAssetPrice(reserve).call(options);
+  
+  console.log(res);
 
-  console.log("LendingPoolAddressesProvider-PriceOracle " + PriceOracleAddr);
+
+  // res = await addrProvider.methods.setPriceOracle("0x356bb5b09bf00bdc9630c0b7bef9321c0339e589").send(options);
+  
+  // console.log(res.transaction);
+
+  // let PriceOracleAddr = await addrProvider.methods.getPriceOracle().call(options);
+
+  // console.log("LendingPoolAddressesProvider-PriceOracle " + PriceOracleAddr);
 }
-setAddresses().then(() => {
+init(BUSDaddr).then(() => {
     process.exit(0);
 });

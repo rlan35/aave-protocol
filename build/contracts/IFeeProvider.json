@@ -5,12 +5,10 @@
       "constant": true,
       "inputs": [
         {
-          "internalType": "address",
           "name": "_user",
           "type": "address"
         },
         {
-          "internalType": "uint256",
           "name": "_amount",
           "type": "uint256"
         }
@@ -18,7 +16,6 @@
       "name": "calculateLoanOriginationFee",
       "outputs": [
         {
-          "internalType": "uint256",
           "name": "",
           "type": "uint256"
         }
@@ -33,7 +30,6 @@
       "name": "getLoanOriginationFeePercentage",
       "outputs": [
         {
-          "internalType": "uint256",
           "name": "",
           "type": "uint256"
         }
@@ -43,25 +39,25 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.14+commit.01f1aaa4\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"calculateLoanOriginationFee\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getLoanOriginationFeePercentage\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{},\"title\":\"IFeeProvider interface\"},\"userdoc\":{\"methods\":{},\"notice\":\"**********Interface for the Aave fee provider.\"}},\"settings\":{\"compilationTarget\":{\"/src/contracts/interfaces/IFeeProvider.sol\":\"IFeeProvider\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/src/contracts/interfaces/IFeeProvider.sol\":{\"keccak256\":\"0xffc3aa98b71f2914098e428d53c56e8a11adc4a3c9c83366ca603e2c900e548e\",\"urls\":[\"bzz-raw://79789a649b7530983bc660033ba1bbf20d6f68dafe6a2a0eb380a2e0a2401c4c\",\"dweb:/ipfs/QmWLyjkjaEBm2awHhXzSNn8pQG9hktDk9HoXSYbP8aN8NA\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"getLoanOriginationFeePercentage\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_user\",\"type\":\"address\"},{\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"calculateLoanOriginationFee\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{},\"title\":\"IFeeProvider interface\"},\"userdoc\":{\"methods\":{},\"notice\":\"**********Interface for the Aave fee provider.\"}},\"settings\":{\"compilationTarget\":{\"/Users/rongjianlan/workspace/go/src/github.com/harmony-one/aave-protocol/contracts/interfaces/IFeeProvider.sol\":\"IFeeProvider\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/rongjianlan/workspace/go/src/github.com/harmony-one/aave-protocol/contracts/interfaces/IFeeProvider.sol\":{\"keccak256\":\"0xffc3aa98b71f2914098e428d53c56e8a11adc4a3c9c83366ca603e2c900e548e\",\"urls\":[\"bzzr://0e1a4722be79008c32d2ab75927bf9f90ea6fb2f7e216447f8e99d1f07a5e637\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.5.0;\n\n/************\n@title IFeeProvider interface\n@notice Interface for the Aave fee provider.\n*/\n\ninterface IFeeProvider {\n    function calculateLoanOriginationFee(address _user, uint256 _amount) external view returns (uint256);\n    function getLoanOriginationFeePercentage() external view returns (uint256);\n}\n",
-  "sourcePath": "/src/contracts/interfaces/IFeeProvider.sol",
+  "sourcePath": "/Users/rongjianlan/workspace/go/src/github.com/harmony-one/aave-protocol/contracts/interfaces/IFeeProvider.sol",
   "ast": {
-    "absolutePath": "/src/contracts/interfaces/IFeeProvider.sol",
+    "absolutePath": "/Users/rongjianlan/workspace/go/src/github.com/harmony-one/aave-protocol/contracts/interfaces/IFeeProvider.sol",
     "exportedSymbols": {
       "IFeeProvider": [
-        1443
+        1390
       ]
     },
-    "id": 1444,
+    "id": 1391,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1428,
+        "id": 1375,
         "literals": [
           "solidity",
           "^",
@@ -69,7 +65,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:11"
+        "src": "0:23:9"
       },
       {
         "baseContracts": [],
@@ -77,9 +73,9 @@
         "contractKind": "interface",
         "documentation": "**********\n@title IFeeProvider interface\n@notice Interface for the Aave fee provider.",
         "fullyImplemented": false,
-        "id": 1443,
+        "id": 1390,
         "linearizedBaseContracts": [
-          1443
+          1390
         ],
         "name": "IFeeProvider",
         "nodeType": "ContractDefinition",
@@ -87,23 +83,23 @@
           {
             "body": null,
             "documentation": null,
-            "id": 1437,
+            "id": 1384,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "calculateLoanOriginationFee",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1433,
+              "id": 1380,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1430,
+                  "id": 1377,
                   "name": "_user",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1437,
-                  "src": "184:13:11",
+                  "scope": 1384,
+                  "src": "184:13:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -111,10 +107,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1429,
+                    "id": 1376,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "184:7:11",
+                    "src": "184:7:9",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -126,11 +122,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1432,
+                  "id": 1379,
                   "name": "_amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1437,
-                  "src": "199:15:11",
+                  "scope": 1384,
+                  "src": "199:15:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -138,10 +134,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1431,
+                    "id": 1378,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "199:7:11",
+                    "src": "199:7:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -151,19 +147,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "183:32:11"
+              "src": "183:32:9"
             },
             "returnParameters": {
-              "id": 1436,
+              "id": 1383,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1435,
+                  "id": 1382,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1437,
-                  "src": "239:7:11",
+                  "scope": 1384,
+                  "src": "239:7:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -171,10 +167,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1434,
+                    "id": 1381,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "239:7:11",
+                    "src": "239:7:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -184,10 +180,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "238:9:11"
+              "src": "238:9:9"
             },
-            "scope": 1443,
-            "src": "147:101:11",
+            "scope": 1390,
+            "src": "147:101:9",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -195,29 +191,29 @@
           {
             "body": null,
             "documentation": null,
-            "id": 1442,
+            "id": 1389,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getLoanOriginationFeePercentage",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1438,
+              "id": 1385,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "293:2:11"
+              "src": "293:2:9"
             },
             "returnParameters": {
-              "id": 1441,
+              "id": 1388,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1440,
+                  "id": 1387,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1442,
-                  "src": "319:7:11",
+                  "scope": 1389,
+                  "src": "319:7:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -225,10 +221,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1439,
+                    "id": 1386,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "319:7:11",
+                    "src": "319:7:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -238,33 +234,33 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "318:9:11"
+              "src": "318:9:9"
             },
-            "scope": 1443,
-            "src": "253:75:11",
+            "scope": 1390,
+            "src": "253:75:9",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 1444,
-        "src": "118:212:11"
+        "scope": 1391,
+        "src": "118:212:9"
       }
     ],
-    "src": "0:331:11"
+    "src": "0:331:9"
   },
   "legacyAST": {
-    "absolutePath": "/src/contracts/interfaces/IFeeProvider.sol",
+    "absolutePath": "/Users/rongjianlan/workspace/go/src/github.com/harmony-one/aave-protocol/contracts/interfaces/IFeeProvider.sol",
     "exportedSymbols": {
       "IFeeProvider": [
-        1443
+        1390
       ]
     },
-    "id": 1444,
+    "id": 1391,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1428,
+        "id": 1375,
         "literals": [
           "solidity",
           "^",
@@ -272,7 +268,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:11"
+        "src": "0:23:9"
       },
       {
         "baseContracts": [],
@@ -280,9 +276,9 @@
         "contractKind": "interface",
         "documentation": "**********\n@title IFeeProvider interface\n@notice Interface for the Aave fee provider.",
         "fullyImplemented": false,
-        "id": 1443,
+        "id": 1390,
         "linearizedBaseContracts": [
-          1443
+          1390
         ],
         "name": "IFeeProvider",
         "nodeType": "ContractDefinition",
@@ -290,23 +286,23 @@
           {
             "body": null,
             "documentation": null,
-            "id": 1437,
+            "id": 1384,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "calculateLoanOriginationFee",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1433,
+              "id": 1380,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1430,
+                  "id": 1377,
                   "name": "_user",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1437,
-                  "src": "184:13:11",
+                  "scope": 1384,
+                  "src": "184:13:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -314,10 +310,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1429,
+                    "id": 1376,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "184:7:11",
+                    "src": "184:7:9",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -329,11 +325,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1432,
+                  "id": 1379,
                   "name": "_amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1437,
-                  "src": "199:15:11",
+                  "scope": 1384,
+                  "src": "199:15:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -341,10 +337,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1431,
+                    "id": 1378,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "199:7:11",
+                    "src": "199:7:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -354,19 +350,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "183:32:11"
+              "src": "183:32:9"
             },
             "returnParameters": {
-              "id": 1436,
+              "id": 1383,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1435,
+                  "id": 1382,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1437,
-                  "src": "239:7:11",
+                  "scope": 1384,
+                  "src": "239:7:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -374,10 +370,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1434,
+                    "id": 1381,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "239:7:11",
+                    "src": "239:7:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -387,10 +383,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "238:9:11"
+              "src": "238:9:9"
             },
-            "scope": 1443,
-            "src": "147:101:11",
+            "scope": 1390,
+            "src": "147:101:9",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -398,29 +394,29 @@
           {
             "body": null,
             "documentation": null,
-            "id": 1442,
+            "id": 1389,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getLoanOriginationFeePercentage",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1438,
+              "id": 1385,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "293:2:11"
+              "src": "293:2:9"
             },
             "returnParameters": {
-              "id": 1441,
+              "id": 1388,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1440,
+                  "id": 1387,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1442,
-                  "src": "319:7:11",
+                  "scope": 1389,
+                  "src": "319:7:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -428,10 +424,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1439,
+                    "id": 1386,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "319:7:11",
+                    "src": "319:7:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -441,28 +437,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "318:9:11"
+              "src": "318:9:9"
             },
-            "scope": 1443,
-            "src": "253:75:11",
+            "scope": 1390,
+            "src": "253:75:9",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 1444,
-        "src": "118:212:11"
+        "scope": 1391,
+        "src": "118:212:9"
       }
     ],
-    "src": "0:331:11"
+    "src": "0:331:9"
   },
   "compiler": {
     "name": "solc",
-    "version": "0.5.14+commit.01f1aaa4.Emscripten.clang"
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.0.11",
-  "updatedAt": "2020-01-09T12:41:06.648Z",
+  "schemaVersion": "3.2.0",
+  "updatedAt": "2020-08-06T22:02:21.313Z",
   "devdoc": {
     "methods": {},
     "title": "IFeeProvider interface"

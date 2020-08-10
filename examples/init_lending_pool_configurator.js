@@ -18,7 +18,7 @@ const hmy = new Harmony(
 //0xc162199cDaeAa5a82f00651dd4536F5d2d4277C5
 
 const addrProviderJson = require("../build/contracts/LendingPoolAddressesProvider.json");
-const addrProviderAddr = "0xa92E6188E59dEC1714d6cCd40eeEca2F39075486";
+const addrProviderAddr = "0xeae2c52c7670bedda7b86466558619887d9acc62";
 const addrProvider = hmy.contracts.createContract(
   addrProviderJson.abi,
   addrProviderAddr
@@ -31,9 +31,9 @@ const options = {
   gasLimit: process.env.GAS_LIMIT,
 };
 
-// Ready - proxy address: 0x3B553974FF19E632dDFCF85575288bBF6DdAc1Aa
-async function setAddresses() {
-  let res = await addrProvider.methods.setLendingPoolConfiguratorImpl("0x43e6c2a7b765bf2f305be9ee3de6d7dd8748bba9").send(options);
+// Ready - proxy address: 0xD4dB11fA4b797fa789B8743fd175b6191a594303
+async function init() {
+  let res = await addrProvider.methods.setLendingPoolConfiguratorImpl("0xd8f8c24dd7db591cb1fc636c2671776bc0c34691").send(options);
   
   console.log(res.transaction);
 
@@ -41,6 +41,27 @@ async function setAddresses() {
 
   console.log("LendingPoolAddressesProvider-LendingPoolConfigurator " + poolAddr);
 }
-setAddresses().then(() => {
+init().then(() => {
     process.exit(0);
 });
+
+
+const configJson = require("../build/contracts/LendingPoolConfigurator.json");
+const configAddr = "0xD4dB11fA4b797fa789B8743fd175b6191a594303";
+const config = hmy.contracts.createContract(
+  configJson.abi,
+  configAddr
+);
+
+config.wallet.addByPrivateKey(process.env.PRIVATE_KEY);
+
+const BUSDaddr = "0x2d47d492c0978143171CB577224be39aA1dff5ce"
+
+async function set() {
+  let res = await config.methods.setReserveInterestRateStrategyAddress(BUSDaddr, "0x2c5cb1911ae8a24bfd175c17253a2a626833d1db").send(options);
+  
+  console.log(res.transaction);
+}
+// set().then(() => {
+//     process.exit(0);
+// });

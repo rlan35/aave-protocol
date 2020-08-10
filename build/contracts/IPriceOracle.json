@@ -5,7 +5,6 @@
       "constant": true,
       "inputs": [
         {
-          "internalType": "address",
           "name": "_asset",
           "type": "address"
         }
@@ -13,7 +12,6 @@
       "name": "getAssetPrice",
       "outputs": [
         {
-          "internalType": "uint256",
           "name": "",
           "type": "uint256"
         }
@@ -26,12 +24,10 @@
       "constant": false,
       "inputs": [
         {
-          "internalType": "address",
           "name": "_asset",
           "type": "address"
         },
         {
-          "internalType": "uint256",
           "name": "_price",
           "type": "uint256"
         }
@@ -43,25 +39,25 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.14+commit.01f1aaa4\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_asset\",\"type\":\"address\"}],\"name\":\"getAssetPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_asset\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_price\",\"type\":\"uint256\"}],\"name\":\"setAssetPrice\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"getAssetPrice(address)\":{\"details\":\"returns the asset price in ETH\"},\"setAssetPrice(address,uint256)\":{\"details\":\"sets the asset price, in wei\"}},\"title\":\"IPriceOracle interface\"},\"userdoc\":{\"methods\":{\"getAssetPrice(address)\":{\"notice\":\"*********\"},\"setAssetPrice(address,uint256)\":{\"notice\":\"*********\"}},\"notice\":\"**********Interface for the Aave price oracle.\"}},\"settings\":{\"compilationTarget\":{\"/src/contracts/interfaces/IPriceOracle.sol\":\"IPriceOracle\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/src/contracts/interfaces/IPriceOracle.sol\":{\"keccak256\":\"0xc0e9e1167ea1be00cd5bb7d16bb2cfbed1f9709eb686e2ac614b7dff7d4e2212\",\"urls\":[\"bzz-raw://596dce9acfac84920a093c837e69be0314d0f6f12f548b453fadcac642b4c1a9\",\"dweb:/ipfs/Qmdu7qtugdc7xZbmwTxe9ujtgmWkKxr3TdXktCFam4VL5W\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"_asset\",\"type\":\"address\"},{\"name\":\"_price\",\"type\":\"uint256\"}],\"name\":\"setAssetPrice\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_asset\",\"type\":\"address\"}],\"name\":\"getAssetPrice\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"getAssetPrice(address)\":{\"details\":\"returns the asset price in ETH\"},\"setAssetPrice(address,uint256)\":{\"details\":\"sets the asset price, in wei\"}},\"title\":\"IPriceOracle interface\"},\"userdoc\":{\"methods\":{\"getAssetPrice(address)\":{\"notice\":\"*********\"},\"setAssetPrice(address,uint256)\":{\"notice\":\"*********\"}},\"notice\":\"**********Interface for the Aave price oracle.\"}},\"settings\":{\"compilationTarget\":{\"/Users/rongjianlan/workspace/go/src/github.com/harmony-one/aave-protocol/contracts/interfaces/IPriceOracle.sol\":\"IPriceOracle\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/rongjianlan/workspace/go/src/github.com/harmony-one/aave-protocol/contracts/interfaces/IPriceOracle.sol\":{\"keccak256\":\"0xc0e9e1167ea1be00cd5bb7d16bb2cfbed1f9709eb686e2ac614b7dff7d4e2212\",\"urls\":[\"bzzr://fa328ce7953b9d126ffb9b02cff36deb96e98557c42587fd9b0b0b5eccc6d65b\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.5.0;\n\n/************\n@title IPriceOracle interface\n@notice Interface for the Aave price oracle.*/\ninterface IPriceOracle {\n    /***********\n    @dev returns the asset price in ETH\n     */\n    function getAssetPrice(address _asset) external view returns (uint256);\n\n    /***********\n    @dev sets the asset price, in wei\n     */\n    function setAssetPrice(address _asset, uint256 _price) external;\n\n}\n",
-  "sourcePath": "/src/contracts/interfaces/IPriceOracle.sol",
+  "sourcePath": "/Users/rongjianlan/workspace/go/src/github.com/harmony-one/aave-protocol/contracts/interfaces/IPriceOracle.sol",
   "ast": {
-    "absolutePath": "/src/contracts/interfaces/IPriceOracle.sol",
+    "absolutePath": "/Users/rongjianlan/workspace/go/src/github.com/harmony-one/aave-protocol/contracts/interfaces/IPriceOracle.sol",
     "exportedSymbols": {
       "IPriceOracle": [
-        1661
+        1608
       ]
     },
-    "id": 1662,
+    "id": 1609,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1646,
+        "id": 1593,
         "literals": [
           "solidity",
           "^",
@@ -69,7 +65,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:15"
+        "src": "0:23:13"
       },
       {
         "baseContracts": [],
@@ -77,9 +73,9 @@
         "contractKind": "interface",
         "documentation": "**********\n@title IPriceOracle interface\n@notice Interface for the Aave price oracle.",
         "fullyImplemented": false,
-        "id": 1661,
+        "id": 1608,
         "linearizedBaseContracts": [
-          1661
+          1608
         ],
         "name": "IPriceOracle",
         "nodeType": "ContractDefinition",
@@ -87,23 +83,23 @@
           {
             "body": null,
             "documentation": "*********\n@dev returns the asset price in ETH",
-            "id": 1653,
+            "id": 1600,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getAssetPrice",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1649,
+              "id": 1596,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1648,
+                  "id": 1595,
                   "name": "_asset",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1653,
-                  "src": "233:14:15",
+                  "scope": 1600,
+                  "src": "233:14:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -111,10 +107,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1647,
+                    "id": 1594,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "233:7:15",
+                    "src": "233:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -125,19 +121,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "232:16:15"
+              "src": "232:16:13"
             },
             "returnParameters": {
-              "id": 1652,
+              "id": 1599,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1651,
+                  "id": 1598,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1653,
-                  "src": "272:7:15",
+                  "scope": 1600,
+                  "src": "272:7:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -145,10 +141,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1650,
+                    "id": 1597,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "272:7:15",
+                    "src": "272:7:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -158,10 +154,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "271:9:15"
+              "src": "271:9:13"
             },
-            "scope": 1661,
-            "src": "210:71:15",
+            "scope": 1608,
+            "src": "210:71:13",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -169,23 +165,23 @@
           {
             "body": null,
             "documentation": "*********\n@dev sets the asset price, in wei",
-            "id": 1660,
+            "id": 1607,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "setAssetPrice",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1658,
+              "id": 1605,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1655,
+                  "id": 1602,
                   "name": "_asset",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1660,
-                  "src": "373:14:15",
+                  "scope": 1607,
+                  "src": "373:14:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -193,10 +189,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1654,
+                    "id": 1601,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "373:7:15",
+                    "src": "373:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -208,11 +204,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1657,
+                  "id": 1604,
                   "name": "_price",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1660,
-                  "src": "389:14:15",
+                  "scope": 1607,
+                  "src": "389:14:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -220,10 +216,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1656,
+                    "id": 1603,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "389:7:15",
+                    "src": "389:7:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -233,39 +229,39 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "372:32:15"
+              "src": "372:32:13"
             },
             "returnParameters": {
-              "id": 1659,
+              "id": 1606,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "413:0:15"
+              "src": "413:0:13"
             },
-            "scope": 1661,
-            "src": "350:64:15",
+            "scope": 1608,
+            "src": "350:64:13",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 1662,
-        "src": "116:301:15"
+        "scope": 1609,
+        "src": "116:301:13"
       }
     ],
-    "src": "0:418:15"
+    "src": "0:418:13"
   },
   "legacyAST": {
-    "absolutePath": "/src/contracts/interfaces/IPriceOracle.sol",
+    "absolutePath": "/Users/rongjianlan/workspace/go/src/github.com/harmony-one/aave-protocol/contracts/interfaces/IPriceOracle.sol",
     "exportedSymbols": {
       "IPriceOracle": [
-        1661
+        1608
       ]
     },
-    "id": 1662,
+    "id": 1609,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1646,
+        "id": 1593,
         "literals": [
           "solidity",
           "^",
@@ -273,7 +269,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:15"
+        "src": "0:23:13"
       },
       {
         "baseContracts": [],
@@ -281,9 +277,9 @@
         "contractKind": "interface",
         "documentation": "**********\n@title IPriceOracle interface\n@notice Interface for the Aave price oracle.",
         "fullyImplemented": false,
-        "id": 1661,
+        "id": 1608,
         "linearizedBaseContracts": [
-          1661
+          1608
         ],
         "name": "IPriceOracle",
         "nodeType": "ContractDefinition",
@@ -291,23 +287,23 @@
           {
             "body": null,
             "documentation": "*********\n@dev returns the asset price in ETH",
-            "id": 1653,
+            "id": 1600,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getAssetPrice",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1649,
+              "id": 1596,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1648,
+                  "id": 1595,
                   "name": "_asset",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1653,
-                  "src": "233:14:15",
+                  "scope": 1600,
+                  "src": "233:14:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -315,10 +311,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1647,
+                    "id": 1594,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "233:7:15",
+                    "src": "233:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -329,19 +325,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "232:16:15"
+              "src": "232:16:13"
             },
             "returnParameters": {
-              "id": 1652,
+              "id": 1599,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1651,
+                  "id": 1598,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1653,
-                  "src": "272:7:15",
+                  "scope": 1600,
+                  "src": "272:7:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -349,10 +345,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1650,
+                    "id": 1597,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "272:7:15",
+                    "src": "272:7:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -362,10 +358,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "271:9:15"
+              "src": "271:9:13"
             },
-            "scope": 1661,
-            "src": "210:71:15",
+            "scope": 1608,
+            "src": "210:71:13",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -373,23 +369,23 @@
           {
             "body": null,
             "documentation": "*********\n@dev sets the asset price, in wei",
-            "id": 1660,
+            "id": 1607,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "setAssetPrice",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1658,
+              "id": 1605,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1655,
+                  "id": 1602,
                   "name": "_asset",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1660,
-                  "src": "373:14:15",
+                  "scope": 1607,
+                  "src": "373:14:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -397,10 +393,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1654,
+                    "id": 1601,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "373:7:15",
+                    "src": "373:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -412,11 +408,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 1657,
+                  "id": 1604,
                   "name": "_price",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1660,
-                  "src": "389:14:15",
+                  "scope": 1607,
+                  "src": "389:14:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -424,10 +420,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1656,
+                    "id": 1603,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "389:7:15",
+                    "src": "389:7:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -437,34 +433,34 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "372:32:15"
+              "src": "372:32:13"
             },
             "returnParameters": {
-              "id": 1659,
+              "id": 1606,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "413:0:15"
+              "src": "413:0:13"
             },
-            "scope": 1661,
-            "src": "350:64:15",
+            "scope": 1608,
+            "src": "350:64:13",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 1662,
-        "src": "116:301:15"
+        "scope": 1609,
+        "src": "116:301:13"
       }
     ],
-    "src": "0:418:15"
+    "src": "0:418:13"
   },
   "compiler": {
     "name": "solc",
-    "version": "0.5.14+commit.01f1aaa4.Emscripten.clang"
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.0.11",
-  "updatedAt": "2020-01-09T12:41:06.650Z",
+  "schemaVersion": "3.2.0",
+  "updatedAt": "2020-08-06T22:02:21.318Z",
   "devdoc": {
     "methods": {
       "getAssetPrice(address)": {

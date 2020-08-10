@@ -10,15 +10,8 @@ const hmy = new Harmony(
   }
 );
 
-
-//mint account address
-//test account with 100 ONEs
-//one1c93pn8x6a2j6stcqv5wag5m0t5k5ya79ge86sg
-//1f054c21a0f57ebc402c00e14bd1707ddf45542d4ed9989933dbefc4ea96ca68
-//0xc162199cDaeAa5a82f00651dd4536F5d2d4277C5
-
 const addrProviderJson = require("../build/contracts/LendingPoolAddressesProvider.json");
-const addrProviderAddr = "0xa92E6188E59dEC1714d6cCd40eeEca2F39075486";
+const addrProviderAddr = "0xeae2c52c7670bedda7b86466558619887d9acc62";
 const addrProvider = hmy.contracts.createContract(
   addrProviderJson.abi,
   addrProviderAddr
@@ -31,9 +24,9 @@ const options = {
   gasLimit: process.env.GAS_LIMIT,
 };
 
-// Ready - proxy address: 0xEf945181DB0C4d4F125d749108B5Ff1Ebdf0d19D
-async function setAddresses() {
-  let res = await addrProvider.methods.setTokenDistributor("0xef945181db0c4d4f125d749108b5ff1ebdf0d19d").send(options);
+// Ready - proxy address: 0x3e557Ca3253f05810C6Fb8776c7540A194396041
+async function init() {
+  let res = await addrProvider.methods.setTokenDistributor("0x3e557ca3253f05810c6fb8776c7540a194396041").send(options);
   
   console.log(res.transaction.receipt);
 
@@ -41,6 +34,6 @@ async function setAddresses() {
 
   console.log("LendingPoolAddressesProvider-TokenDistributor " + poolAddr);
 }
-setAddresses().then(() => {
+init().then(() => {
     process.exit(0);
 });
